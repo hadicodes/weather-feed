@@ -5,8 +5,6 @@ import './App.css';
 
 
 const apiKey = 'WLnQVZq9VmGJU8QpbLIXdYzBLw5isNTL';
-// const locationKey = 22889
-// const  url = `http://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${apiKey}`
 const url = `http://dataservice.accuweather.com/currentconditions/v1/54685_PC?apikey=${apiKey}`
 
 
@@ -23,24 +21,32 @@ class App extends Component {
     }
 
     componentDidMount() {
-        this.getCurrentWeather()
+        this.longPollCurrentWeather()
     }
 
 
     getCurrentWeather = () => {
         fetch(url)
-            .then(response => response.json())
-            .then(responseJson => {
-                console.log(responseJson)
-                this.setState({ currentTemp: responseJson[0].Temperature.Imperial.Value, weatherText: responseJson[0].WeatherText })
+            .then(res => res.json())
+            .then(weatherdata => {
+                console.log(weatherdata)
+                this.setState({ currentTemp: weatherdata[0].Temperature.Imperial.Value, weatherText: weatherdata[0].WeatherText })
             })
+    }
+
+    longPollCurrentWeather = () => {
+        this.getCurrentWeather()
+        setInterval(() => {
+            this.getCurrentWeather()
+            console.log('new weather')
+        }, 300000);
     }
 
 
 
     render() {
         return (
-            <div className="weather-feed container">
+            <div className="weather-feed container-fluid">
                 <Weather
                     weatherText={this.state.weatherText}
                     currentTemp={this.state.currentTemp}

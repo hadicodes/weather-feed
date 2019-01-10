@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+body {
+  background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+
+}
+
 
 .weather-feed {
   text-align: center;
@@ -19,20 +24,25 @@
 
 .current-temp h1 {
   font-size: 100px;
+  font-weight: bold;
 }
 
+.condition {
+  margin: 15px 0;
+}
 
 span.degree-symbol {
   position: absolute;
-  top: -15px;
-  right: 370px;
+  top: 22px;
+  right: 430px;
   font-size: 100px;
 }
 
 .five-day-forecast {
   display: flex;
   justify-content: space-evenly;
-  margin: 200px 0px;
+  margin: 185px 0px;
+  font-size: 20px;
 }
 
 .todays-weather {
