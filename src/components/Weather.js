@@ -12,7 +12,7 @@ class Weather extends Component {
                     <span className="degree-symbol">º</span>
                 </div>
 
-                <div className="city">{this.props.city}</div>
+                <div className="city">Syndey, Australia</div>
             </div>
         );
     }

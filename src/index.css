@@ -29,6 +29,12 @@ body {
 
 .condition {
   margin: 15px 0;
+  /* font-size: 25px; */
+  font-weight: 500;
+}
+
+.city{
+  font-weight: 300;
 }
 
 span.degree-symbol {
