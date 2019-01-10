@@ -15,7 +15,8 @@ class App extends Component {
         this.state = {
             currentTemp: '',
             fivedayTemps: [],
-            conditions: ['sunny', 'rain', 'clear', 'cloudy', 'hot'],
+            conditions: ['sunny', 'rain', 'clear', 'cloudy'],
+            days: [1, 2, 3, 4, 5],
             weatherText: ''
         };
     }
@@ -52,7 +53,7 @@ class App extends Component {
                     currentTemp={this.state.currentTemp}
                 />
                 <div className="five-day-forecast">
-                    {this.state.conditions.map((el, i) => (
+                    {this.state.days.map((el, i) => (
                         <FiveDayWeather key={i * Math.random()} />
                     ))}
                 </div>
