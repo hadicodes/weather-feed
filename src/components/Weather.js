@@ -5,8 +5,8 @@ class Weather extends Component {
         let { currentTemp, weatherText } = this.props
         return (
             <div className="todays-weather">
-                <i className="wi wi-day-cloudy" />
                 <div className="current-temp">
+                    <div className="today">Today</div>
                     <div className="condition">{weatherText}</div>
                     <h1>{currentTemp}</h1>
                     <span className="degree-symbol">º</span>

@@ -39,7 +39,7 @@ body {
 
 span.degree-symbol {
   position: absolute;
-  top: 22px;
+  top: 65px;
   right: 423px;
   font-size: 100px;
 }
@@ -53,4 +53,24 @@ span.degree-symbol {
 
 .todays-weather {
   margin-top: 70px;
+}
+
+.forecast-current-temp {
+  position: relative;
+}
+
+.forecast-current-temp p {
+    margin-top: 23px;
+    margin-bottom: -1rem;
+}
+
+.degree-symbol-5-day {
+  position: absolute;
+  top: 0px;
+  right: 36px;
+}
+
+.today {
+    font-size: 23px;
+    font-weight: 200;
 }
